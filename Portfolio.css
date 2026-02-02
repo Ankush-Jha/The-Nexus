@@ -12,11 +12,10 @@
 body{
     background-color: black;
     background-image: url("Archive/Nexus Background Wallpaper.png");
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewport='0 0 32 32'><path d='M2 2 L20 20' stroke='%2300f2ff' stroke-width='3' stroke-linecap='round' /><path d='M20 20 L26 26' stroke='%23888' stroke-width='4' /><path d='M3 3 L19 19' stroke='white' stroke-width='1' opacity='0.6' stroke-linecap='round' /></svg>") 2 2, auto;
+    background-image: url("Archive/Nexus Background Wallpaper.png");
 }
 
 body:active {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewport='0 0 32 32'><path d='M2 2 L20 20' stroke='%2300f2ff' stroke-width='5' stroke-linecap='round' style='filter:drop-shadow(0 0 2px %2300f2ff);' /><path d='M20 20 L26 26' stroke='%23888' stroke-width='4' /><path d='M3 3 L19 19' stroke='white' stroke-width='2' stroke-linecap='round' /></svg>") 2 2, auto;
 }
 
 p{
