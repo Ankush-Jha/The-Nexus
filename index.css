@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Goldman:wght@400;700&family=Grenze+Gotisch:wght@100..900&family=Kings&family=Nova+Square&family=Uncial+Antiqua&display=swap');
 
 @font-face {
     font-family: 'StarJedi';
@@ -26,7 +26,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Goldman', cursive;
 }
 
 body {
@@ -100,6 +99,7 @@ body:active {
 }
 
 .crawl-content {
+    font-family: 'Goldman', sans-serif;
     position: absolute;
     top: 100%;
     animation: crawl 40s linear forwards;
@@ -125,6 +125,7 @@ body:active {
 }
 
 .intro-blue-text {
+    font-family: 'Goldman', sans-serif;
     color: #4bd5ee;
     font-size: 1.8rem;
 
@@ -182,11 +183,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-bottom: 3rem;
+    flex-wrap: nowrap;
 }
 
 .navbar {
+    font-family: 'Goldman', sans-serif;
     background: rgba(30, 30, 35, 0.5);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
@@ -202,10 +205,11 @@ header {
 .site-logo {
     display: block;
     font-family: 'StarJedi', sans-serif;
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     color: transparent; /* Hollow effect */
-    -webkit-text-stroke: 2px var(--sw-yellow);
+    -webkit-text-stroke: 1px var(--sw-yellow);
+    white-space: nowrap;
     margin-bottom: 0;
     text-decoration: none;
     letter-spacing: 2px;
@@ -384,3 +388,30 @@ footer a:hover {
     background: var(--sw-yellow);
     border-radius: 10px;
 }
+
+
+/* main shit */
+
+.Quote{
+    color: #61dbf0;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Uncial Antiqua', sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.hoverish_page{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.3px);
+    -webkit-backdrop-filter: blur(2.3px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+

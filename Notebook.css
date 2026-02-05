@@ -39,63 +39,9 @@ body:active {
     padding: 2rem;
 }
 
-/* Header / Nav (Matching Index) */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
 
-.site-logo {
-    display: block;
-    font-family: 'StarJedi', sans-serif;
-    font-size: 4rem;
-    text-align: center;
-    color: transparent;
-    -webkit-text-stroke: 2px var(--sw-yellow);
-    text-decoration: none;
-    letter-spacing: 2px;
-    transition: transform 0.3s ease;
-}
+/* Header / Nav styles are inherited from index.css to ensure consistency */
 
-.site-logo:hover {
-    transform: scale(1.05);
-}
-
-.navbar {
-    background: rgba(30, 30, 35, 0.5);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--border-glow);
-    border-radius: 50px;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--sw-yellow);
-}
 
 /* Backgrounds */
 .bg-overlay {

@@ -10,8 +10,9 @@
 
 body{
     background-color: rgb(0, 0, 0);
-    /* background-image: url("Archive/Nexus Background Wallpaper.png"); */
-    /* background-image: url("Archive/Nexus Background Wallpaper.png"); */
+    background-image: url("Archive/pexels-francesco-ungaro-998641.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body:active {
