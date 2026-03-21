@@ -1,428 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Goldman:wght@400;700&family=Grenze+Gotisch:wght@100..900&family=Kings&family=Nova+Square&family=Uncial+Antiqua&display=swap');
-
+/* faltu ka bhagbhosda for each page */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Jim+Nightshade&family=Kings&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Uncial+Antiqua&display=swap');
 @font-face {
-    font-family: 'StarJedi';
-    src: url('Fonts/star_jedi/starjedi/Starjedi.ttf') format('truetype');
+  font-family:'StarJedi';
+  src: url("../0. Archive/Star Jedi Font/StarjediSpecialEdition-9Bqy.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: 'Pixel';
-    src: url('Fonts/return-to-castle/return.ttf') format('truetype');
+*{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
-
-:root {
-    --sw-yellow: #FFE81F;
-    --bg-dark: #000;
-    --card-bg: rgba(30, 30, 35, 0.40);
-    --border-glow: rgba(255, 255, 255, 0.15);
-    --accent-color: #00f2ff;
-    --text-main: #e0e0e0;
-    --glass-blur: blur(20px);
-}
-
-* {
+body{
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    overflow-x: hidden;
-    min-height: 100vh;
-    /* Normal Blue Lightsaber Cursor - Diagonal */
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewport='0 0 32 32'><path d='M2 2 L20 20' stroke='%2300f2ff' stroke-width='3' stroke-linecap='round' /><path d='M20 20 L26 26' stroke='%23888' stroke-width='4' /><path d='M3 3 L19 19' stroke='white' stroke-width='1' opacity='0.6' stroke-linecap='round' /></svg>") 2 2, auto;
-}
-
-body:active {
-    /* Glowing/Active Blue Lightsaber Cursor - Wider Stroke + brighter core */
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewport='0 0 32 32'><path d='M2 2 L20 20' stroke='%2300f2ff' stroke-width='5' stroke-linecap='round' style='filter:drop-shadow(0 0 2px %2300f2ff);' /><path d='M20 20 L26 26' stroke='%23888' stroke-width='4' /><path d='M3 3 L19 19' stroke='white' stroke-width='2' stroke-linecap='round' /></svg>") 2 2, auto;
-}
-
-/* Background Image Overlay */
-.bg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('Archive/pexels-francesco-ungaro-998641.jpg') no-repeat center center fixed;
+    background-image: url("../0. Archive/pexels-umutdagli-13402171.jpg");
     background-size: cover;
-    z-index: -2;
-    filter: brightness(0.6) saturate(1.2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.bg-stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat top center;
-    z-index: -1;
-    opacity: 0.5;
-}
-
-/* Star Wars Intro Crawl */
-#crawl-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: transparent;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1.5s ease;
-}
-
-.crawl-container {
-    width: 100%;
-    max-width: 800px;
-    height: 60%;
-    color: var(--sw-yellow);
-    font-size: 200%;
-    font-weight: 600;
-    letter-spacing: 2px;
-    line-height: 1.5;
-    text-align: justify;
-    position: relative;
-    pointer-events: none;
-    transform-origin: 50% 100%;
-    transform: perspective(300px) rotateX(25deg);
-}
-
-.crawl-content {
-    font-family: 'Goldman', sans-serif;
-    position: absolute;
-    top: 100%;
-    animation: crawl 40s linear forwards;
-}
-
-.crawl-title {
-    text-align: center;
-    font-family: inherit; /* Inherit Goldman from body or specify explicitly */
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-@keyframes crawl {
-    0% {
-        top: 100%;
-        opacity: 1;
-    }
-    100% {
-        top: -150%;
-        opacity: 0;
-    }
-}
-
-.intro-blue-text {
-    font-family: 'Goldman', sans-serif;
-    color: #4bd5ee;
-    font-size: 1.8rem;
-
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeIntro 4s ease-in-out forwards;
-}
-
-@keyframes fadeIntro {
-    0% { opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; display: none; }
-}
-
-.skip-btn {
-    /* Removed absolute positioning here as it's now handled by the parent container .intro-buttons */
-    position: relative; 
-    bottom: auto;
-    right: auto;
-    background: transparent;
-    border: 2px solid var(--sw-yellow);
-    color: var(--sw-yellow);
-    padding: 10px 20px;
-    font-family: 'Goldman', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-}
-
-.skip-btn:hover {
-    background: var(--sw-yellow);
-    color: black;
-    box-shadow: 0 0 15px var(--sw-yellow);
-}
-
-/* Main Site Content */
-.site-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-#main-site {
-    opacity: 0;
-    transition: opacity 2s ease;
-}
-
-#main-site.visible {
-    opacity: 1;
-}
-
-/* Navigation Bar */
-header {
+.headerr{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: nowrap;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
 }
 
-.navbar {
-    font-family: 'Goldman', sans-serif;
-    background: rgba(30, 30, 35, 0.5);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--border-glow);
-    border-radius: 50px;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: center; /* Center links since logo is gone */
-    align-items: center;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+.Logo{
+    font-family: "StarJedi", sans-serif;
+    font-size: 50px;
+    color:#97e5f3;
+    text-shadow: #fefae0 2px 2px 2px 2px
 }
 
-.site-logo {
-    display: block;
-    font-family: 'StarJedi', sans-serif;
-    font-size: 3rem;
-    text-align: center;
-    color: transparent; /* Hollow effect */
-    -webkit-text-stroke: 1px var(--sw-yellow);
-    white-space: nowrap;
-    margin-bottom: 0;
-    text-decoration: none;
-    letter-spacing: 2px;
-    transition: transform 0.3s ease;
+.topnav {
+  background-color: transparent;
+  overflow: hidden;
 }
 
-.site-logo:hover {
-    transform: scale(1.05);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
 
 .nav-links a {
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s;
+  float: left;
+  color: #fefae0;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'IM Fell English SC', serif;
 }
+
 
 .nav-links a:hover {
-    color: var(--sw-yellow);
+  background-color: transparent;
+  color: #94d2bdde;
 }
 
-/* Grid Layout (Early 2000s Indie) */
-.main-grid {
-    display: grid;
-    grid-template-columns: 300px 1fr 300px;
-    gap: 2rem;
-    align-items: start;
+
+.nav-links a.active {
+  background-color: transparent;
+  color: #94d2bdde;
 }
 
-@media (max-width: 1024px) {
-    .main-grid {
-        grid-template-columns: 1fr;
-    }
+
+.content {
+    height: 200vh; 
+    color: white;
+    padding: 50px;
 }
 
-/* Bento Cards */
-.card {
-    background: var(--card-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--border-glow);
-    border-radius: 24px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: all 0.4s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(40, 40, 45, 0.50);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-}
-
-.card-title {
-    font-family: inherit;
-    font-weight: 700;
-    color: var(--sw-yellow);
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    border-bottom: 1px solid var(--border-glow);
-    padding-bottom: 0.5rem;
-}
-
-/* Profile Section */
-.profile-section {
-    text-align: center;
-}
-
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid var(--sw-yellow);
-    margin-bottom: 1rem;
-    object-fit: cover;
-}
-
-.status-tag {
-    display: inline-block;
-    background: var(--sw-yellow);
-    color: black;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-/* Research Preview */
-.research-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.paper-title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
-}
-
-.paper-snippet {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: #ccc;
-}
-
-.read-more {
-    display: inline-block;
-    padding: 8px 20px;
-    border: 1px solid var(--sw-yellow);
-    color: var(--sw-yellow);
+a{
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    transition: 0.3s;
+    color: #fefae0;
+    font-size: 30px;
+    font-family: 'Jim Nightshade', serif;
 }
 
-.read-more:hover {
-    background: var(--sw-yellow);
-    color: black;
+a:hover{
+    color: #94d2bdde;
 }
-
-/* Spotify Wrapper */
-.spotify-card {
-    padding: 0;
-    overflow: hidden;
-}
-
-/* Footer */
-footer {
-    border-top: 1px solid var(--border-glow);
-    margin-top: 4rem;
-    padding: 2rem 0;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-footer .footer-links {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-footer a {
-    color: #888;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: var(--sw-yellow);
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-dark);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--sw-yellow);
-    border-radius: 10px;
-}
-
-
-/* main shit */
-
-.Quote{
-    color: #61dbf0;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Uncial Antiqua', sans-serif;
-    text-align: center;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-
-}
-
-
-.hero-section {
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 2rem;
-}
-
-.hoverish_page{
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 2rem;
-    background: rgba(255, 255, 255, 0);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2.3px);
-    -webkit-backdrop-filter: blur(2.3px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-}
-
