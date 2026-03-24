@@ -8,9 +8,8 @@ The Nexus: A Personal Website
 
     This project is being developed as part of my web development coursework , incorporating JavaScript, API integration, and interactive UI design.
 
-🧠 Concept
-
-    Most websites are curated. This one is documented.
+🧠 Concept:
+Most websites are curated. This one is documented.
 
     Instead of hiding the process, this site shows:
 
@@ -22,28 +21,24 @@ The Nexus: A Personal Website
     part notebook, part lab, part gallery, part existential crisis (but aesthetic)
 
 🗂️ Structure:
-
-    🏠 Home:
-        The entry point to my world.
-        A snapshot of who I am right now—not a static bio, but a moving state.
+🏠 Home:
+The entry point to my world.
+A snapshot of who I am right now—not a static bio, but a moving state.
 
     📓 Notebook:
         A curated collection of my writings:
-
-        thoughts
-        essays
-        fragments
-        ideas I want others to read
-
+            thoughts
+            essays
+            fragments
+            ideas I want others to read
         This is where my brain leaks onto the internet.
 
     🔬 Research:
         A transparent log of my academic journey:
-
-        research topics
-        paper breakdowns
-        behind-the-scenes (BTS) of how I approach problems
-        personal research journal entries
+            research topics
+            paper breakdowns
+            behind-the-scenes (BTS) of how I approach problems
+            personal research journal entries
 
         Not just what I learn, but how I think.
 
@@ -53,18 +48,16 @@ The Nexus: A Personal Website
 
         It’s equal parts:
 
-        accountability system
-        motivation engine
-        proof that I actually follow through
+            accountability system
+            motivation engine
+            proof that I actually follow through
 
     🎨 Portfolio (Art & Projects):
         A space for everything I create:
-
-        art
-        side projects
-        experiments
-        things that don’t fit in neat categories
-
+            art
+            side projects
+            experiments
+            things that don’t fit in neat categories
         No pressure to be “professional”—just honest work.
 
     🙋‍♀️ About:
