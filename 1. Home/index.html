@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <!-- crawl -->
+        <!-- starwars crawwll -->
         <div id="starwars-crawl-overlay">
             <div class="starwars-actions">
                 <a href="../3. Portfolio/index.html">unprofessional</a>
@@ -44,15 +44,16 @@
                         <a href="#">Portfolio</a>
                         <a href="#">Notebook</a>
                         <a href="#">The List</a>
+                        <button id="theme-toggle" class="theme-btn">🌓</button>
                     </div>
                 </nav>
             </div>
         </div>
         
-        <!-- main sec -->
+        <!-- mainsec -->
         <main>
             <section id ="pg1">
-                <!-- Left Column -->
+                <!-- columnnn 1 -->
                 <div class="column col-left">
                     <div class="intro-text glass-panel">
                         <img src="" alt="">
@@ -61,34 +62,34 @@
                     </div>
                 </div>
 
-                <!-- Middle Column -->
+                <!-- column 2 -->
                 <div class="column col-middle">
                     <div class="bullitin">
                         <h2>[bulletin board]</h2>
-                        <div class="bulletin-items">
-                            <div class="sticky-note">
-                                <p>undercover out now</p>
+                        <div class="bulletin-controls">
+                            <input type="text" id="search-input" placeholder="Search notes...">
+                            <div class="filter-sort-controls">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="update">Updates</button>
+                                <button class="filter-btn" data-filter="misc">Misc</button>
+                                <button id="sort-btn">Sort: Newest</button>
                             </div>
-                            <div class="sticky-note lines">
-                                <p>stream limn plslsls **.*</p>
-                            </div>
-                            <div class="sticky-note">
-                                <p>misc pages :p</p>
-                            </div>
+                        </div>
+                        <div class="bulletin-items" id="dynamic-bulletin">
+                            
                         </div>
                     </div>
                     <div class="visionboard glass-panel">
-                        <h2>/microblog</h2>
-                        <!-- Replacing with a similar structure to microblog -->
+                        <h2>/visionboarddd</h2>
                         <img src="../0. Archive/2026 Desktop Wallpaper (1).png" alt="Vision Board" style="width: 100%; border-radius: 10px;">
                     </div>
                 </div>
                 
-                <!-- Right Column -->
+                <!-- columnn 3 -->
                 <div class="column col-right">
                     <div class="spotify">
                         <iframe 
-                            src="https://open.spotify.com/playlist/7Ln6jCiJDZhhxecpmBpAyT?si=f3f8b670bbdf449b"
+                            src="https://open.spotify.com/embed/playlist/7Ln6jCiJDZhhxecpmBpAyT?utm_source=generator&theme=0"
                             width="100%" 
                             height="380" 
                             frameborder="0" 
@@ -111,7 +112,7 @@
             </section>
         </main>
         <footer>
-
+            
         </footer>
         <script src="index.js"></script>
     </body>
