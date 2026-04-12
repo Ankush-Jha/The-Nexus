@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const API_KEY = "sKUX2KPZCcQTdfgQikLa8AODxSQHol3gNXoVpz1f";
 const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+const loadingIndicator = document.getElementById("apod-loading");
 
 fetch(url)
   .then(response => {
@@ -39,6 +40,8 @@ fetch(url)
     return response.json();
   })
   .then(data => {
+    if (loadingIndicator) loadingIndicator.style.display = 'none';
+
     if (data.code && data.code !== 200) {
       document.getElementById("title").textContent = "🌌 NASA API Maintenance";
       document.getElementById("date").textContent = "Try again later";
@@ -62,6 +65,7 @@ fetch(url)
     }
   })
   .catch(error => {
+    if (loadingIndicator) loadingIndicator.style.display = 'none';
     console.error("Error fetching APOD:", error);
     document.getElementById("title").textContent = "API Error";
     document.getElementById("description").textContent = "Could not reach the Astronomy Picture of the Day service.";
@@ -70,12 +74,15 @@ fetch(url)
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    let notes = [
-        { id: 1, text: 'undercover out now', type: 'update', date: '2026-04-01', likes: 2 },
-        { id: 2, text: 'stream limn plslsls **.*', type: 'misc', date: '2026-04-05', likes: 5 },
-        { id: 3, text: 'misc pages :p', type: 'misc', date: '2026-04-03', likes: 1 },
-        { id: 4, text: 'new research dropped', type: 'update', date: '2026-03-20', likes: 10 }
-    ];
+    let notes = JSON.parse(localStorage.getItem('bulletinNotes'));
+    if (!notes) {
+        notes = [
+            { id: 1, text: 'undercover out now', type: 'update', date: '2026-04-01', likes: 2 },
+            { id: 2, text: 'stream limn plslsls **.*', type: 'misc', date: '2026-04-05', likes: 5 },
+            { id: 3, text: 'misc pages :p', type: 'misc', date: '2026-04-03', likes: 1 },
+            { id: 4, text: 'new research dropped', type: 'update', date: '2026-03-20', likes: 10 }
+        ];
+    }
 
     let currentFilter = 'all'; 
     let currentSort = 'newest'; 
@@ -124,18 +131,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 const note = notes.find(n => n.id === id);
                 if(note) {
                     note.likes++;
+                    localStorage.setItem('bulletinNotes', JSON.stringify(notes));
                     renderNotes();
                 }
             });
         });
     }
 
+    function debounce(func, delay) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func(...args), delay);
+        };
+    }
+
     if (searchInput) {
         
-        searchInput.addEventListener('input', (e) => {
+        const handleSearch = debounce((e) => {
             searchQuery = e.target.value;
             renderNotes();
-        });
+        }, 300);
+
+        searchInput.addEventListener('input', handleSearch);
 
         
         filterBtns.forEach(btn => {
@@ -171,12 +189,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (themeToggleBtn) {
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+            themeToggleBtn.textContent = '🌑';
+        }
+
         themeToggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');
             if (document.body.classList.contains('light-mode')) {
                 themeToggleBtn.textContent = '🌑';
+                localStorage.setItem('theme', 'light');
             } else {
                 themeToggleBtn.textContent = '🌓'; 
+                localStorage.setItem('theme', 'dark');
             }
         });
     }
