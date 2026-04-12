@@ -88,9 +88,11 @@ I’m building this one for myself.
 
 📅 Timeline:
 Milestone 1: Planning & Structure ✅
-Milestone 2: API Integration 🔄
-Milestone 3: Interactivity ⏳
-Final Submission: 10th April
+Milestone 2: API Integration ✅
+Milestone 3: Interactivity ✅
+Final Submission: 10th April ✅
+
+🚀 **Status**: Live and deployed on GitHub Pages.
 
 🔮 Future Plans:
 Add blog-like tagging system

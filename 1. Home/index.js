@@ -176,12 +176,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.body.classList.contains('light-mode')) {
                 themeToggleBtn.textContent = '🌑';
             } else {
-                themeToggleBtn.textContent = '🌓'; // Sun/Moon icon or initial icon
+                themeToggleBtn.textContent = '🌓'; 
             }
         });
     }
 
-    // 7. LIGHTSABER CURSOR
     document.body.classList.add('lightsaber-blue');
     
     document.addEventListener('mousedown', () => {
