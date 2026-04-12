@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // apod
 
-const API_KEY = "sKUX2KPZCcQTdfgQikLa8AODxSQHol3gNXoVpz1f";
+const API_KEY = "0Rc53qoAojkukpykntI7wlLaPRsvYLuUE2DNmcQ5";
 const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 const loadingIndicator = document.getElementById("apod-loading");
 
