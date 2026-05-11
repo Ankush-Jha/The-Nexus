@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./starwarsCrawl.css";
+import "../styles/starwarsCrawl.css";
 
 export default function Crawl() {
   // Controls whether the crawl overlay is visible
