@@ -5,6 +5,7 @@ export default function Cursor() {
     const cursorRef = useRef(null);
     const trailRef = useRef(null);
     const [isClicking, setIsClicking] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
 
     useEffect(() => {
         const cursor = cursorRef.current;
@@ -20,12 +21,22 @@ export default function Cursor() {
             mouseX = e.clientX;
             mouseY = e.clientY;
 
-            // Main saber follows instantly
-            cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) rotate(-35deg)`;
+            // Main saber follows instantly, rotated to be left-inclined
+            cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) rotate(-135deg)`;
         };
 
         const handleMouseDown = () => setIsClicking(true);
         const handleMouseUp = () => setIsClicking(false);
+
+        const handleMouseOver = (e) => {
+            const target = e.target;
+            const style = window.getComputedStyle(target);
+            if (style.cursor === "pointer" || target.tagName === "A" || target.tagName === "BUTTON") {
+                setIsHovering(true);
+            } else {
+                setIsHovering(false);
+            }
+        };
 
         // Smooth trailing glow
         const animate = () => {
@@ -42,6 +53,7 @@ export default function Cursor() {
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mousedown", handleMouseDown);
         document.addEventListener("mouseup", handleMouseUp);
+        document.addEventListener("mouseover", handleMouseOver);
 
         // Hide default cursor
         document.body.style.cursor = "none";
@@ -50,6 +62,7 @@ export default function Cursor() {
             document.removeEventListener("mousemove", handleMouseMove);
             document.removeEventListener("mousedown", handleMouseDown);
             document.removeEventListener("mouseup", handleMouseUp);
+            document.removeEventListener("mouseover", handleMouseOver);
             document.body.style.cursor = "auto";
         };
     }, []);
@@ -59,13 +72,13 @@ export default function Cursor() {
             {/* Ambient glow trail */}
             <div
                 ref={trailRef}
-                className={`saber-trail ${isClicking ? "yellow" : "blue"}`}
+                className={`saber-trail ${isClicking ? "yellow" : "blue"} ${isHovering ? "hover" : ""}`}
             />
 
                 {/* Lightsaber cursor */}
                 <div
                     ref={cursorRef}
-                    className={`lightsaber ${isClicking ? "yellow" : "blue"}`}
+                    className={`lightsaber ${isClicking ? "yellow" : "blue"} ${isHovering ? "hover" : ""}`}
                 >
                     <div className="hilt">
                         <div className="hilt-detail" />

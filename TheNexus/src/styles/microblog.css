@@ -1,0 +1,53 @@
+.microblog-container {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(140, 255, 47, 0.3);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-family: "VT323", monospace;
+}
+
+.microblog-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.7rem;
+  color: var(--accent-lime, #8cff2f);
+  margin: 0 0 1rem;
+  text-transform: lowercase;
+}
+
+.microblog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.microblog-post {
+  border-bottom: 1px dashed rgba(140, 255, 47, 0.2);
+  padding-bottom: 0.75rem;
+}
+
+.microblog-post:last-child {
+  border-bottom: none;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.post-user {
+  color: var(--accent-lime, #8cff2f);
+  font-size: 1.1rem;
+}
+
+.post-date {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+}
+
+.post-content {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}

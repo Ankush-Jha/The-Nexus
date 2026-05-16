@@ -21,7 +21,7 @@ export default function PlanetOfTheDay() {
     `;
 
     const API_URL =
-        "SY6lllc5RX07NznHibN36b1J1YbryD4frM8LvXz9" +
+        "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?" +
         `query=${encodeURIComponent(query)}&format=json`;
 
     useEffect(() => {

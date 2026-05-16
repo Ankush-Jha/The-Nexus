@@ -1,0 +1,63 @@
+/* =========================
+   QUOTE CARD — INDIEWEB RETRO
+========================= */
+.quote-card {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid rgba(140, 255, 47, 0.35);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Subtle animated glow */
+.quote-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(140, 255, 47, 0.08),
+      transparent 50%
+    );
+  pointer-events: none;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+/* Quote text */
+.quote-text {
+  position: relative;
+  margin: 0;
+  font-family: "VT323", monospace;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--accent-yellow, #ffe81f);
+  z-index: 1;
+}
+
+/* Author */
+.quote-author {
+  position: relative;
+  margin: 0.5rem 0 0;
+  align-self: flex-end;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.45rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-pink, #ff9ac4);
+  z-index: 1;
+}
+
+/* Glow animation */
+@keyframes pulseGlow {
+  from { opacity: 0.3; }
+  to { opacity: 0.6; }
+}

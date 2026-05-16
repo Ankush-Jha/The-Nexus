@@ -12,7 +12,7 @@ export default function Navbar() {
         <header className="navbar-wrapper">
             {/* Brand */}
             <a href="#home" className="navbar-brand">
-                <span className="brand-text">Prachi's Galaxy</span>
+                <span className="brand-text">The Nexus</span>
                 <span className="brand-stars">✦ ✧ ✶ ✦</span>
             </a>
 

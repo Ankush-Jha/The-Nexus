@@ -1,190 +1,115 @@
-/* ===============================
-   STAR WARS NAVBAR
-   Inspired by holographic UI
-================================= */
-
-/* Optional Star Wars font fallback */
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap");
-
-:root {
-    --saber-yellow: #ffe81f;
-    --saber-yellow-soft: rgba(255, 232, 31, 0.7);
-    --saber-yellow-faint: rgba(255, 232, 31, 0.15);
-    --panel-bg: rgba(0, 0, 0, 0.18);
-}
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Uncial+Antiqua&display=swap");
 
 /* ===============================
-   WRAPPER
+   NAVBAR — INDIEWEB STAR WARS
 ================================= */
 .navbar-wrapper {
-    width: 100%;
-    padding: 2rem 5vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-sizing: border-box;
+  width: min(1400px, 96%);
+  margin: 0 auto;
+  padding: 1rem 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1000;
 }
 
 /* ===============================
    BRAND
 ================================= */
 .navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    color: var(--saber-yellow);
-    font-family: "Orbitron", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--accent-lime, #8cff2f);
+  user-select: none;
 }
 
 .brand-text {
-    font-size: clamp(1.6rem, 2.6vw, 3rem);
-    font-weight: 700;
-    text-shadow:
-        0 0 6px var(--saber-yellow),
-        0 0 12px var(--saber-yellow),
-        0 0 22px rgba(255, 232, 31, 0.6);
+  font-family: "Uncial Antiqua", serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--accent-lime, #8cff2f);
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(140, 255, 47, 0.4);
+  letter-spacing: 2px;
 }
 
 .brand-stars {
-    font-size: 1.1rem;
-    letter-spacing: 0.35em;
-    color: var(--saber-yellow);
-    text-shadow:
-        0 0 6px var(--saber-yellow),
-        0 0 12px var(--saber-yellow);
-    animation: twinkle 2.5s ease-in-out infinite alternate;
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  color: var(--accent-lime, #8cff2f);
+  text-shadow: 0 0 6px rgba(140, 255, 47, 0.5);
+  animation: twinkle 2s ease-in-out infinite alternate;
 }
 
 /* ===============================
-   NAV PANEL
+   NAV LINKS — RETRO PILL BUTTONS
 ================================= */
 .navbar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 0.75rem 1rem;
-    border: 2px solid var(--saber-yellow);
-    border-radius: 999px;
-
-    background: var(--panel-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    box-shadow:
-        0 0 10px rgba(255, 232, 31, 0.35),
-        0 0 25px rgba(255, 232, 31, 0.15),
-        inset 0 0 20px rgba(255, 232, 31, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(140, 255, 47, 0.4);
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
 }
 
-/* ===============================
-   LINKS
-================================= */
 .nav-link {
-    position: relative;
-    padding: 0.8rem 1.4rem;
-    text-decoration: none;
-
-    color: var(--saber-yellow);
-    font-family: "Orbitron", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-
-    border-radius: 999px;
-    transition: all 0.3s ease;
-    text-shadow:
-        0 0 4px rgba(255, 232, 31, 0.7),
-        0 0 8px rgba(255, 232, 31, 0.4);
+  position: relative;
+  padding: 0.5rem 0.9rem;
+  text-decoration: none;
+  color: var(--accent-lime, #8cff2f);
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.55rem;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  transition: all 0.15s ease;
 }
 
 .nav-link:hover {
-    background: rgba(255, 232, 31, 0.08);
-    box-shadow:
-        0 0 8px rgba(255, 232, 31, 0.4),
-        0 0 18px rgba(255, 232, 31, 0.2);
-    transform: translateY(-2px);
+  background: var(--accent-lime, #8cff2f);
+  color: #000;
+  border-color: var(--accent-lime, #8cff2f);
+  text-decoration: none;
+  text-shadow: none;
 }
 
 .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 20%;
-    bottom: 0.35rem;
-    width: 60%;
-    height: 1px;
-    background: var(--saber-yellow);
-    box-shadow: 0 0 6px var(--saber-yellow);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.nav-link:hover::after {
-    transform: scaleX(1);
+  display: none;
 }
 
 /* ===============================
    ANIMATIONS
 ================================= */
 @keyframes twinkle {
-    from {
-        opacity: 0.6;
-        transform: scale(1);
-    }
-    to {
-        opacity: 1;
-    transform: scale(1.08);
-    }
+  from { opacity: 0.6; }
+  to { opacity: 1; }
 }
 
 /* ===============================
    RESPONSIVE
 ================================= */
-@media (max-width: 1024px) {
-    .navbar-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .navbar {
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: center;
-    }
+  .navbar {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 
-    .nav-link {
-        padding: 0.7rem 1rem;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 640px) {
-    .brand-text {
-        font-size: 1.4rem;
-    }
-
-    .brand-stars {
-        display: none;
-    }
-
-    .navbar {
-        border-radius: 1.5rem;
-        padding: 0.75rem;
-    }
-
-    .nav-link {
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
-        padding: 0.6rem 0.85rem;
-    }
+  .nav-link {
+    font-size: 0.5rem;
+    padding: 0.4rem 0.7rem;
+  }
 }

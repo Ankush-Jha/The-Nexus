@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import "../styles/starwarsCrawl.css";
 
-export default function Crawl() {
+export default function Crawl({ onComplete }) {
   // Controls whether the crawl overlay is visible
   const [isVisible, setIsVisible] = useState(true);
 
   // Function to hide the crawl
   const skipCrawl = () => {
     setIsVisible(false);
+    if (onComplete) onComplete();
   };
 
   // Automatically hide the crawl after 35 seconds

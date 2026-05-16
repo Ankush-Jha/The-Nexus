@@ -1,0 +1,22 @@
+.media-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.media-panel {
+  padding: 0.75rem !important;
+}
+
+.spotify-embed {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #282828;
+}
+
+.youtube-embed {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(140, 255, 47, 0.2);
+}

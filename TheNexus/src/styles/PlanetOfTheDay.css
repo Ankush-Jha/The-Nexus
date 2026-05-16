@@ -1,60 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+/* =========================
+   PLANET OF THE DAY — RETRO WINDOW
+========================= */
 .planetCard {
-    background: rgba(0, 0, 0, 0.82);
-    border-radius: 28px;
-    padding: 1.5rem;
-    color: #95d1ee;
-    font-family: "VT323", monospace;
-    width: 100%;
+  background: rgba(0, 0, 0, 0.72);
+  border: 2px solid rgba(140, 255, 47, 0.35);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #95d1ee;
+  font-family: "VT323", monospace;
+  width: 100%;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
 .planetCard h2 {
-    margin: 0 0 1rem;
-    font-size: 2.4rem;
-    font-weight: normal;
+  margin: 0 0 0.75rem;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.6rem;
+  color: var(--accent-lime, #8cff2f);
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+  border-bottom: 1px dashed rgba(140, 255, 47, 0.3);
+  padding-bottom: 0.5rem;
 }
 
+/* Windows XP-ish window */
 .planetWindow {
-    background: #cfcfcf;
-    border: 2px solid #888;
-    border-radius: 6px;
-    overflow: hidden;
+  background: #cfcfcf;
+  border: 2px solid #888;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .windowBar {
-    background: linear-gradient(to bottom, #2d5ea8, #1b3f7c);
-    color: white;
-    padding: 0.4rem 0.7rem;
-    font-size: 1rem;
+  background: linear-gradient(to bottom, #2d5ea8, #1b3f7c);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  font-family: "VT323", monospace;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.windowBar::before {
+  content: "◉ ◉ ◉";
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  opacity: 0.7;
 }
 
 .planetContent {
-    background: #ececec;
-    color: black;
-    padding: 1rem;
+  background: #ececec;
+  color: #111;
+  padding: 0.75rem;
+  font-family: "VT323", monospace;
 }
 
 .planetContent h3 {
-    margin-top: 0;
-    font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  font-family: "VT323", monospace;
+  color: #1b3f7c;
 }
 
 .planetContent p {
-    margin: 0.4rem 0;
-    font-size: 1rem;
+  margin: 0.25rem 0;
+  font-size: 1rem;
 }
 
 .planetContent button {
-    margin-top: 1rem;
-    width: 100%;
-    padding: 0.75rem;
-    border: none;
-    background: #2d5ea8;
-    color: white;
-    cursor: pointer;
-    font-family: inherit;
-    border-radius: 4px;
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px outset #999;
+  background: linear-gradient(to bottom, #e0e0e0, #c0c0c0);
+  color: #111;
+  cursor: pointer;
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .planetContent button:hover {
-    background: #1b3f7c;
+  background: linear-gradient(to bottom, #c0c0c0, #a0a0a0);
+  border-style: inset;
+}
+
+.planetContent button:active {
+  border-style: inset;
+  background: #b0b0b0;
 }
