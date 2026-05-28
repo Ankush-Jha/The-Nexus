@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+/* ==========================
+   BULLETIN BOARD — CORK STYLE
+========================== */
+.bulletin-wrapper {
+  width: 100%;
+}
+
+.bulletin-frame {
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(140, 110, 120, 0.55);
+  border: 2px solid rgba(140, 255, 47, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.bulletin-title {
+  text-align: center;
+  margin: 0 0 1rem;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.7rem;
+  color: #111;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================
+   CORK BOARD
+========================== */
+.bulletin-grid {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.06), transparent 25%),
+    linear-gradient(135deg, #d9a86c, #c48a55);
+  border-radius: 6px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================
+   NOTES
+========================== */
+.note {
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow:
+    2px 3px 8px rgba(0, 0, 0, 0.2),
+    inset 0 0 6px rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.note::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #d63333;
+  box-shadow:
+    0 0 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.note h3 {
+  margin: 0.75rem 0 0.5rem;
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5rem;
+  line-height: 1.6;
+  color: #111;
+}
+
+/* ==========================
+   PAPER STYLES
+========================== */
+.update-note { background: #fffdf8; }
+.media-note { background: #fff7c8; }
+.links-note { background: #f6f6f6; }
+.listening-note { background: #fffdf8; }
+
+.note-img-container {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+}
+
+.note-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.note-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.note-links li {
+  margin: 0.2rem 0;
+}
+
+.note-links a {
+  font-family: "VT323", monospace;
+  font-size: 0.9rem;
+  color: #ff9ac4;
+  text-decoration: underline;
+}
+
+.listening-card {
+  text-align: center;
+}
+
+.mini-album {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.song-name {
+  font-family: "VT323", monospace;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  color: #111;
+}
+
+/* ==========================
+   VISION BOARD
+========================== */
+.vision-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.vision-image {
+  width: 100%;
+  display: block;
+}
+
+/* ==========================
+   BOOKS
+========================== */
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.book-card {
+  text-align: center;
+}
+
+.book-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-card p {
+  margin-top: 0.3rem;
+  font-size: 0.45rem;
+  line-height: 1.4;
+  font-family: "Press Start 2P", monospace;
+  color: #111;
+}
+
+/* ==========================
+   SHOWS
+========================== */
+.shows-note ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shows-note li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.shows-note li::before {
+  content: "☆ ";
+  color: #d9a86c;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+.vision-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.vision-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.08);
+}
+.vision-scroll::-webkit-scrollbar-thumb {
+  background: rgba(120, 90, 40, 0.45);
+  border-radius: 999px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 900px) {
+  .bulletin-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "vision"
+      "books"
+      "shows";
+  }
+}

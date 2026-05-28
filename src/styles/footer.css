@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+/* ========================================
+   FOOTER — INDIEWEB RETRO STAR WARS
+======================================== */
+.footer {
+  position: relative;
+  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.85);
+  border-top: 2px solid rgba(140, 255, 47, 0.35);
+  color: #e0e0e0;
+  overflow: hidden;
+  padding-top: 0;
+}
+
+/* Decorative top */
+.footer-top-cut {
+  display: none;
+}
+
+.footer-shell {
+  position: relative;
+  z-index: 2;
+  width: min(1400px, 96%);
+  margin: 0 auto;
+  padding: 2rem 0 1.5rem;
+}
+
+/* ========================================
+   UPPER NAV SECTION
+======================================== */
+.footer-upper {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed rgba(140, 255, 47, 0.2);
+}
+
+.footer-brand .brand-symbol {
+  font-size: 1.5rem;
+  color: var(--accent-lime, #8cff2f);
+  text-shadow: 0 0 8px rgba(140, 255, 47, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  max-width: 260px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+}
+
+.footer-column h4 {
+  margin: 0 0 0.75rem;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.5rem;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  color: var(--accent-lime, #8cff2f);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-column a {
+  color: var(--accent-pink, #ff9ac4);
+  text-decoration: underline;
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  transition: 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: var(--accent-lime, #8cff2f);
+}
+
+/* ========================================
+   FOOTER CARD
+======================================== */
+.footer-card {
+  background: rgba(0, 0, 0, 0.6);
+  color: #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 2px solid rgba(140, 255, 47, 0.25);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.footer-card::before {
+  display: none;
+}
+
+.footer-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-card h2 {
+  margin: 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-lime, #8cff2f);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+}
+
+.footer-card-header p {
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+}
+
+.collab-btn {
+  text-decoration: none;
+  background: transparent;
+  color: var(--accent-lime, #8cff2f);
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(140, 255, 47, 0.5);
+  border-radius: 4px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.45rem;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  transition: 0.15s ease;
+}
+
+.collab-btn:hover {
+  background: var(--accent-lime, #8cff2f);
+  color: #000;
+  text-decoration: none;
+}
+
+/* Newsletter */
+.newsletter h3 {
+  margin: 0 0 0.75rem;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.55rem;
+  color: var(--accent-yellow, #ffe81f);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(140, 255, 47, 0.3);
+  border-radius: 4px;
+  padding: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-family: "VT323", monospace;
+  outline: none;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.newsletter-form button {
+  border: 2px solid rgba(140, 255, 47, 0.4);
+  background: transparent;
+  color: var(--accent-lime, #8cff2f);
+  width: 40px;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.newsletter-form button:hover {
+  background: var(--accent-lime, #8cff2f);
+  color: #000;
+}
+
+.newsletter-note {
+  max-width: 450px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.4;
+  font-family: "VT323", monospace;
+  font-size: 1rem;
+}
+
+/* Bottom row */
+.footer-bottom {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(140, 255, 47, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "VT323", monospace;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socials a {
+  color: var(--accent-pink, #ff9ac4);
+  font-size: 1.1rem;
+  transition: 0.2s ease;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  color: var(--accent-lime, #8cff2f);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 900px) {
+  .footer-upper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-card-header,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-upper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .footer-card {
+    padding: 1rem;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    border-radius: 4px;
+  }
+  .newsletter-form button {
+    width: 100%;
+    height: 36px;
+    border-radius: 3px;
+  }
+}
