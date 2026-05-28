@@ -1,5 +1,5 @@
-import Navbar from "./components/navbar.jsx";
-import Footer from "./components/footer.jsx";
+import Navbar from "../components/navbar.jsx";
+import Footer from "../components/footer.jsx";
 export default function Home(){
     return (
         <>
@@ -26,7 +26,7 @@ export default function Home(){
             <section className = "second-sec">
                 <div className = "vision-board">
                     <h2>2026 Vision Board</h2>
-                    <img src="" alt="" />
+                    <img src="src/assets/Canva Project 2026.png" alt="2026 Vision Board" />
                     <p>Learn more about my Impossibe List (read: Impossible List)</p>
                 </div>
                 <div className="Writing-status-update">
@@ -37,12 +37,12 @@ export default function Home(){
             </section>
             <section className = "third-sec">
                 <div className = "Spotify-player">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6da4oBWfyQ2T9AKQ7I6QoE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style={{borderRadius: '12px'}} src="https://open.spotify.com/embed/playlist/6da4oBWfyQ2T9AKQ7I6QoE?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
                 <div>
                     <h3>Book I'm reading</h3>
-                    <img src="" alt="" />
-                    <p>Title</p>
+                    <img src="src/assets/Spiral by Koji Suzuki.jpeg" alt="Book I'm reading" />
+                    <p>Spiral by Koji Suzuki</p>
                 </div>
             </section>
         </main>
