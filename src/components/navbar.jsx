@@ -1,29 +1,20 @@
-import "../styles/navbar.css";
-
-export default function Navbar() {
-    const navItems = [
-        { name: "Home", href: "#home" },
-        { name: "Notebook", href: "#notebook" },
-        { name: "Research", href: "#research" },
-        { name: "Portfolio", href: "#portfolio" },
-    ];
-
+export default function Navbar(){
     return (
-        <header className="navbar-wrapper">
-            {/* Brand */}
-            <a href="#home" className="navbar-brand">
-                <span className="brand-text">The Nexus</span>
-                <span className="brand-stars">✦ ✧ ✶ ✦</span>
-            </a>
-
-            {/* Navigation */}
-            <nav className="navbar">
-                {navItems.map((item) => (
-                    <a key={item.name} href={item.href} className="nav-link">
-                        {item.name}
-                    </a>
-                ))}
-            </nav>
-        </header>
-    );
+        <nav>
+            <div className = "websiteTitle">
+                The Nexus
+            </div>
+            <div className ="Nav">
+                <ul className = "NavList">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Research">Research</a></li>
+                    <li><a href="/Notebook">Notebook</a></li>
+                    <li><a href="/Portfolio">Portfolio</a></li>
+                    <li><a href="/The List">The List</a></li>
+                    <li><a href="/Writing">Writing</a></li>
+                    <li><a href="/About">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    )
 }
